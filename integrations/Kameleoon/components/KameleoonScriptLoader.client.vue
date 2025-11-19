@@ -9,7 +9,7 @@ onMounted(async () => {
 
     const timeoutMs = 500;
 
-    window.kameleoonQueue ||= [];
+    window.kameleoonQueue = window.kameleoonQueue || [];
     window.kameleoonStartLoadTime = Date.now();
 
     window.kameleoonDisplayPage = function (fromEngine) {
