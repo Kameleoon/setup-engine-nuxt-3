@@ -7,7 +7,7 @@ import { SITECODE_SRC } from "~/integrations/Kameleoon/sitecode";
 onMounted(async () => {
     await nextTick();
 
-    const timeoutMs = 500;
+    const kameleoonLoadingTimeout = 500;
 
     window.kameleoonQueue = window.kameleoonQueue || [];
     window.kameleoonStartLoadTime = Date.now();
@@ -19,7 +19,7 @@ onMounted(async () => {
         document.getElementById("kameleoonLoadingStyleSheet")?.remove();
     };
 
-    window.kameleoonDisplayPageTimeOut = setTimeout(window.kameleoonDisplayPage, timeoutMs);
+    window.kameleoonDisplayPageTimeOut = setTimeout(window.kameleoonDisplayPage, kameleoonLoadingTimeout);
 
     const alreadyLoaded = document.querySelector(`script[src*="${SITECODE_SRC}"]`);
     if (!alreadyLoaded) {
