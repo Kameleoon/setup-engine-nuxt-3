@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-inter {
+    font-family: "Inter", sans-serif;
+}
+
+/* Theme CSS variables */
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Custom components for A/B test UI */
+.variant-a {
+    @apply bg-blue-50 border-blue-200;
+}
+
+.variant-b {
+    @apply bg-green-50 border-green-200;
+}
+
+.cta-button-a {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+}
+
+.cta-button-b {
+    @apply bg-green-600 hover:bg-green-700 text-white;
+}
