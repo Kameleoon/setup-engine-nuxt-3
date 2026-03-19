@@ -17,7 +17,8 @@ if (process.server) {
         style: [
             {
                 id: "kameleoonLoadingStyleSheet",
-                children: "* { visibility:hidden!important; background-image:none!important; }",
+                children:
+                    "html::after { content: ''; position: fixed; inset: 0; background: #fff; z-index: 2147483647; }",
             },
         ],
     });
